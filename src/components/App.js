@@ -34,6 +34,17 @@ function App() {
     setToys(donateToy)
   }
 
+  // function handleAddLike(){
+  //   let updateToys = toys.map((toy) => {
+  //     if (toy.id === updateToys.id) {
+  //       return updateToys
+  //     } else {
+  //       return toy
+  //     }
+  //   })
+  //   setToys(updateToys)
+  // }
+
   return (
     <>
       <Header />
@@ -41,7 +52,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} handleDonateToy={handleDonateToy}/>
+      <ToyContainer toys={toys} handleDonateToy={handleDonateToy} /*handleAddLike={handleAddLike}*//>
     </>
   );
 }
