@@ -7,10 +7,16 @@
       "likes": 8
     },
     {
+      "0": {
+        "id": 2,
+        "name": "Buzz Lightyear",
+        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+        "likes": 26
+      },
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
+      "likes": 17
     },
     {
       "id": 3,

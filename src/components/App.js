@@ -33,6 +33,25 @@ function App() {
     })
     setToys(donateToy)
   }
+  
+  function handleAddLike(id){
+      let updateToys = toys.map((toy) => {
+        if (toy.id === id) {
+          toy.likes += 1
+        } 
+          return toy
+      })
+      setToys(updateToys)
+      
+      fetch(`http://localhost:3001/toys/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(toys.filter((toy) => toy.id == id))
+      }).then(response => response.json())
+      .then(handleAddLike);
+    }
 
   return (
     <>
@@ -41,7 +60,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} handleDonateToy={handleDonateToy}/>
+      <ToyContainer toys={toys} handleDonateToy={handleDonateToy} handleAddLike={handleAddLike}/>
     </>
   );
 }
