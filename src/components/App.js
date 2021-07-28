@@ -26,6 +26,14 @@ function App() {
     }) 
   }
 
+  function handleDonateToy(id){
+    let donateToy = toys.filter((toy) => {
+      if (toy.id !== id)
+        return true
+    })
+    setToys(donateToy)
+  }
+
   return (
     <>
       <Header />
@@ -33,7 +41,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys}/>
+      <ToyContainer toys={toys} handleDonateToy={handleDonateToy}/>
     </>
   );
 }
